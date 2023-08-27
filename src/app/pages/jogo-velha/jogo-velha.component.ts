@@ -44,7 +44,7 @@ winnerCombination():any{
       return this.celulas[a]
     }
   }
-  return null
+  return console.log('null')
 }
 
   get player(){
@@ -66,6 +66,7 @@ winnerCombination():any{
 
     if(this.winnerCombination() != null){
       this.winner = true
+      console.log(this.winner)
     }
 }
 

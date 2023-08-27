@@ -20,7 +20,7 @@
   </div>
 
   <div class="winning-msg" *ngIf="winner">
-    <p *ngIf="winnerCombination() == 'X' || 'O'" >Jogador {{ winnerCombination() }} Venceu Maravilhosamente!</p>
+    <p *ngIf="winnerCombination() != null"> Jogador {{ winnerCombination() }} Venceu Maravilhosamente!</p>
     <p *ngIf="empate"> {{ empate }} </p>
     <button (click)="reset()">Reiniciar</button>
   </div>

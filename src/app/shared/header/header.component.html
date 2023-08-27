@@ -1,0 +1,13 @@
+<header class="frame">
+  <div class="menu-icon paused" (click)="menuToggle()" #mel data-menu>
+		<div class="line-top"></div>
+		<div class="line-bottom"></div>
+  </div>
+	<div class="menu paused" data-menu>
+		<ul>
+			<li><a [routerLink]="''">Home</a></li>
+			<li><a [routerLink]="'jvelha'">Jogo da Velha</a></li>
+			<li><span>Jogo da Memória</span></li>
+		</ul>
+	</div>
+</header>

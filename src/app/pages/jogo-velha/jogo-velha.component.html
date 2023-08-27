@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<div class="container mt-3" #datajogo>
+
+  <div >
+    <mat-card class="title">
+      <mat-card-content>JOGO DA VELHA <mat-icon class="titleIcon" aria-hidden="true" fontIcon="grid_3x3"></mat-icon></mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="tableBtn">
+    <button class="cell btn btn-primary {{ classFadeIn }}" #datacell *ngFor="let cel of celulas; let i = index" [value]="cel" (click)="makeMove(i)">
+
+      <mat-icon *ngIf="celulas[i] == 'O'" aria-hidden="false" fontIcon="brightness_1"  class="icon"></mat-icon>
+
+      <mat-icon *ngIf="celulas[i] == 'X'" aria-hidden="false" fontIcon="close" class="icon"></mat-icon>
+
+      <p *ngIf="celulas[i] == null"></p>
+    </button>
+  </div>
+
+  <div class="winning-msg" *ngIf="winner">
+    <p *ngIf="winnerCombination() == 'X' || 'O'" >Jogador {{ winnerCombination() }} Venceu Maravilhosamente!</p>
+    <p *ngIf="empate"> {{ empate }} </p>
+    <button (click)="reset()">Reiniciar</button>
+  </div>
+
+    <!--botões de comando-->
+  <div class="containBtn">
+    <button class="btn btn-success" (click)="newGame()">Iniciar</button>
+  </div>
+</div>
